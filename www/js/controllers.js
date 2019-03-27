@@ -58,7 +58,7 @@ $scope.changeRootScopeData = function(){
 //关闭欢迎页，跳转到首页
 $scope.goIn = function() {
     $scope.modal.hide();
-    $state.go('tab.home');
+    $state.go('tab.dash');
 };
 //作用域销毁时，将显示欢迎页的modal销毁
 $scope.$on('$destroy', function() {
