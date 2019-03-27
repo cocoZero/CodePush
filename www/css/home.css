@@ -1,0 +1,6811 @@
+@font-face {
+	font-size: 13px !important;
+	font-family: "Ionicons";
+	src: url("../lib/ionic/fonts/ionicons.eot?v=2.0.1");
+	src: url("../lib/ionic/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("../lib/ionic/fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("../lib/ionic/fonts/ionicons.woff?v=2.0.1") format("woff"), url("../lib/ionic/fonts/ionicons.woff") format("woff"), url("../lib/ionic/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
+	font-weight: normal;
+	font-style: normal; }
+/*解决安卓端Action sheet错乱 重写样式*/
+
+body {
+	font-family: Helvetica, Droidsansfallback,'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif !important;
+	font-size: 13px !important;
+}
+
+.platform-android .action-sheet-backdrop.active {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.platform-android .action-sheet {
+	margin-left: 8px;
+	margin-right: 8px;
+	width: auto;
+	z-index: 11;
+	overflow: hidden;
+}
+.platform-android .action-sheet .action-sheet-title,
+.platform-android .action-sheet .button {
+	display: block;
+	padding: 1px;
+	width: 100%;
+	border-radius: 0;
+	border-color: #d1d3d6;
+	background-color: transparent;
+	color: #007aff;
+	font-size: 21px;
+	text-align: center;
+}
+.platform-android .action-sheet .action-sheet-title {
+	padding: 16px;
+	color: #8f8f8f;
+	text-align: center;
+	font-size: 13px;
+}
+.platform-android .action-sheet .button.active,
+.platform-android .action-sheet .button.activated {
+	background: #e8e8e8;
+}
+.platform-android .action-sheet-group {
+	margin-bottom: 8px;
+	border-radius: 4px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.platform-android .action-sheet-group .button {
+	border-width: 1px 0 0;
+}
+.platform-android .action-sheet .button {
+	display: block;
+	padding: 1px;
+	width: 100%;
+	border-radius: 0;
+	border-color: #d1d3d6;
+	background-color: transparent;
+	color: #007aff;
+	font-size: 21px;
+}
+.platform-android .action-sheet-cancel {
+	font-weight: 500;
+	display: block;
+}
+.platform-android .action-sheet-has-icons .button {}
+
+.tabs-striped .tabs {
+	border: none !important;
+}
+.date-icon {
+	position: absolute;
+	right: 1px;
+	top: 19%;
+	width: 97px;
+	color: #ffffff;
+	border: 1px solid rgba(255, 255, 255, 0.32);
+	border-radius: 20px;
+	line-height: 20px !important;
+	background: #c1353a;
+}
+.date {
+	position: absolute;
+	right: 1px;top: 20%;
+	width: 80px;
+	color: #ffffff;
+}
+.exit {
+	position: absolute;
+	right: 1px;
+	width: 35px;
+	color: #0E63AF;
+}
+.title {
+	margin: 0 !important;
+}
+.element.style {
+	left:0 !important;
+	right:0 !important;
+}
+.font {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+	font-weight: 600;
+}
+.icon-hj {
+	width: 30px;
+	height: 30px;
+	background-image: url(../img/12gfhj.png);
+	background-size: 100% 100%;
+}
+.icon-bb {
+	width: 28px;
+	height: 25px;
+	background-image: url(../img/hf_logo.png);
+	background-size: 100% 100%;
+}
+/**-------------------3d轮播卡片---------------------------**/
+.img-card-box{width:100%;height:100%;overflow:hidden;position:relative;background-color: #f9f9f9 !important;}
+.img-count{width: 100%;position: absolute;bottom: 0%;width: 100%;background-color: #f9f9f9;
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.img-count span{width:10px;height:10px;border-radius:5px;font-size:50%;line-height:70%;display:inline-block;background-color:#FEFEFE;margin:2px 3px 2px 3px;padding: 1px;border: 1px solid #808080;}
+.img-count span.active{background-color:#848484;border:1px solid #6E6E6E;}
+.img-card{width:90%;height:94%;position:absolute;left: 5%;top: 0%;background-color: #f9f9f9}
+.img-card ul {margin:0px;padding:0px; float:left;}
+.img-card li{width:120px;position:absolute;list-style-type:none;overflow:hidden;cursor:pointer;border-radius: 8px}
+.img-card li img{width:100%;height:100%;vertical-align:top;}
+.img-card li .opa{width:100%;height:100%;background:#000;filter:alpha(opacity=0);opacity:0;position:absolute;z-index:999;top:0px;left:0px;}
+.img-card li .b_tit{font-size: 12px;width:100%;height:100%;position:absolute; z-index:1; bottom:0px; left:0px;margin:0px;padding:0px;}
+.img-card li .title{width:100%;height:28px;color:#000000;background:#ffffff;filter:alpha(opacity=60); opacity:0.6; position:absolute; z-index:0; top:0px; left:0px;text-align:center;line-height:28px;}
+.img-card li .tit {
+	width: 100%;
+	height: 37px;
+	padding: 0px;
+	background: #ddf2ff;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.img-card li .tit > * {
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+
+	font-size: 10px;
+	fontFamily: "方正黑体简体";
+	text-align: center;
+}
+.img-card-opacity{
+	position: absolute;
+	z-index: -999;
+	width: 100%;
+	height: 100%;
+}
+/**-------------------3d轮播卡片---------------------------**/
+/*首页*/
+/*-------加载，无数据，网络异常样式 begin-----------*/
+.loadingData:before{
+	content:"加载中...";
+	padding-left: 1%;
+}
+
+.clear-style {
+	clear: both;
+}
+
+.no-data:before {
+	content:"无数据";
+	padding-left: 1%;
+}
+
+.data-anomaly:before {
+	content: "数据异常";
+	padding-left: 1%;
+}
+
+.network-anomaly:before {
+	content:"网络异常";
+	padding-left: 1%;
+}
+
+/*-------加载，无数据，网络异常样式 end-----------*/
+
+
+/**---------------中间业务收入------------------**/
+.business-bg{
+	position: relative;
+	background-image: url(../img/zjywBg.jpg);
+	background-size: 100% 100%;
+	height: 190px;
+}
+.business-height {
+	height: 190px;
+}
+#business_content{
+	position: absolute;
+	width: 25%;
+	top: 25%;
+	left: 65%;
+
+}
+#business_content > div{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#business_title{
+	font-size: 110%;
+	width: 100%;
+	min-width: 110px;
+}
+#businessInfo{
+	margin-top: 10px;
+	min-width: 120px;
+	width: 100%;
+}
+#businessInfo > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 15px;
+	font-size: 90%;
+}
+#businessInfo > div:nth-child(1) > div:nth-child(2) {
+	width: 50%;
+}
+#businessInfo > div:nth-child(1) > div:nth-child(1) {
+	width: 50%;
+}
+#businessInfo > div:nth-child(1) > div:nth-child(2) > i:nth-child(1) {
+	color: #04c5ff;
+}
+#businessInfo > div:nth-child(1) > div:nth-child(2) > i:nth-child(2) {
+	font-size: 70%;
+}
+#businessInfo > div > * {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+/*-------head & tab Bar渐变色样式-----------*/
+.search-color{
+	color:#0e63af !important;
+}
+
+.logout-color{
+	color:#0e63af !important;
+}
+.logo {
+	height: 100%;
+	width: 100%;
+	max-width: 105px;
+}
+
+.headBarBg-linear {
+	background-color: white;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	height:44px;
+}
+
+.footerBarBg-linear >div:nth-child(1) {
+	background: #b91c22 !important;
+}
+.fontColorOn {
+	color: #ffffff;
+}
+.fontColorOff {
+	color: #eba1a1;
+
+}
+
+.font-color{
+	color: #b91c22;
+}
+/*.previous-title {
+	color: #ffffff;
+}*/
+.queryBgColor {
+	color: #ffffff !important;
+}
+.backBgColor {
+	color: #ffffff !important;
+}
+/*背景颜色*/
+.bg-all {
+	/*background: #eeeeee;*/
+	background-image: url(../img/bg-all-phone.png);
+	background-size: 100% 100%;
+}
+/*点击特效*/
+.clickAble :active {
+	-webkit-transition-duration: 0.2s;
+	-webkit-transform: scale(1.05);
+	-moz-transition-duration: 0.2s;
+	-moz-transform: scale(1.05);
+	pointer-events: auto;
+}
+
+.clickAble-body > div {
+	pointer-events: none;
+}
+.clickAble1 > div:nth-child(1) > div:nth-child(1) :active,.clickAble1 > div:nth-child(1) > div:nth-child(2) :active {
+	-webkit-transition-duration: 0.2s;
+	-webkit-transform: scale(1.05);
+	-moz-transition-duration: 0.2s;
+	-moz-transform: scale(1.05);
+	pointer-events: auto;
+}
+/**/
+/*-------------------------home-stick样式begin--------------------------------------------------*/
+#home-stick {
+	background: #f9f9f9;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+#home-stick > * {
+	padding: 2px;
+}
+
+#home-stick > div:nth-child(n+2),#home-stick-than > div > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#home-stick-title {
+	padding-left: 7px;
+	padding-top: 3px;
+	font-size: 110%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#home-stick-number > div > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+#home-stick-than {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+}
+
+#home-stick-than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+}
+
+#home-stick-than > div > div:nth-child(1) > i:nth-child(1) {
+	font-size: 110%;
+}
+#home-stick-than > div > div:nth-child(2) > i:nth-child(1) {
+	font-size: 110%;
+}
+#home-stick-than > div > div:nth-child(2) > i:nth-child(2) {
+	font-size: 50%;
+	padding: 3px;
+	vertical-align: baseline;
+}
+
+/*-------------------------home-stick样式end--------------------------------------------------*/
+/*-------------------------net-margin样式begin--------------------------------------------------*/
+.net-margin {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.net-margin > * {
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+}
+.net-margin-icon {
+	height: 140px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.net-margin-icon > div {
+	width: 100px;
+	height: 100px;
+	background-size: 100% 100%;
+}
+.net-margin-bsy {
+	background-image: url(../img/net-margin-bsy.png);
+}
+.net-margin-bqz {
+	background-image: url(../img/net-margin-bqz.png);
+}
+.net-margin-btq {
+	background-image: url(../img/net-margin-btq.png);
+}
+.net-margin > div > div:nth-child(2) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+/*-------------------------net-margin样式end--------------------------------------------------*/
+/*-------------------------gain-stick样式begin--------------------------------------------------*/
+
+
+#gain-stick {
+	background: #f9f9f9;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+#gain-stick > * {
+	padding: 4px;
+}
+
+#gain-stick > div:nth-child(n+2),#gain-stick-than > div > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#gain-stick-title {
+	padding-left: 7px;
+	padding-top: 3px;
+	font-size: 110%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#gain-stick-number > div > i:nth-child(1) {
+	color: #04c5ff;
+	font-size: 180%;
+}
+#gain-stick-number > div > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+#gain-stick-than {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+}
+#gain-stick-than > div {
+	display: block;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+#gain-stick-than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+}
+
+#gain-stick-than > div > div:nth-child(1) > i:nth-child(1) {
+	font-size: 110%;
+}
+#gain-stick-than > div > div:nth-child(2) > i:nth-child(1) {
+	font-size: 110%;
+}
+#gain-stick-than > div > div:nth-child(2) > i:nth-child(2) {
+	font-size: 50%;
+	padding: 2px;
+	vertical-align: baseline;
+}
+
+/*-------------------------gain-stick样式end--------------------------------------------------*/
+
+/*-------------------------craft-stick样式begin--------------------------------------------------*/
+#craft-stick {
+	background: #f9f9f9;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+#craft-stick > * {
+	padding: 4px;
+}
+
+#craft-stick-number {
+	padding: 8px;
+}
+
+#craft-stick > div:nth-child(n+2),#craft-stick-than > div > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#craft-stick-title {
+	padding-left: 7px;
+	padding-top: 3px;
+	font-size: 110%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#craft-stick-number > div > i:nth-child(1) {
+	color: #04c5ff;
+	font-size: 180%;
+}
+#craft-stick-number > div > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+#craft-stick-than {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+}
+#craft-stick-than > div {
+	display: block;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding-bottom: 4px;
+}
+#craft-stick-than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+}
+
+#craft-stick-than > div > div:nth-child(1) > i:nth-child(1) {
+	font-size: 110%;
+}
+#craft-stick-than > div > div:nth-child(2) > i:nth-child(1) {
+	font-size: 110%;
+}
+#craft-stick-than > div > div:nth-child(2) > i:nth-child(2) {
+	font-size: 50%;
+	padding: 2px;
+	vertical-align: baseline;
+}
+
+/*-------------------------craft-stick样式end--------------------------------------------------*/
+
+/*-------------------------self-deposit样式start--------------------------------------------------*/
+#self-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+}
+#self-pic {
+	width: 80px;
+	height: 80px;
+	background-image: url(../img/self-deposit.png);
+	background-size: 100% 100%;
+}
+#self-content {
+	text-align: center;
+}
+#self-logo {
+	width: 35px;
+	height: 25px;
+	margin: 5px;
+	background-image: url(../img/hf_logo.png);
+	background-size: 100% 100%;
+}
+#self-value {
+	padding-top: 5px;
+	color: #054879;
+	font-weight: 600;
+}
+#self-value > i:nth-child(1) {
+	font-size: 130%;
+}
+#self-value > i:nth-child(2) {
+	/*color: #04c5ff;*/
+	font-size: 50%;
+}
+/*-------------------------self-deposit样式end--------------------------------------------------*/
+
+
+/*-------------------------master-stick样式begin--------------------------------------------------*/
+#master-stick {
+	background: #f9f9f9;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+#master-stick > * {
+	padding: 6px;
+}
+#master-stick-number {
+	padding: 21.1px;
+}
+
+#master-stick > div:nth-child(n+2),#master-stick-than > div > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#master-stick-title {
+	font-size: 110%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#master-stick-number > div > i:nth-child(1) {
+	color: #04c5ff;
+	font-size: 180%;
+}
+#master-stick-number > div > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+#master-stick-than {
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#master-stick-than > div {
+	display: block;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+#master-stick-than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+	padding-bottom: 3px;
+}
+#master-stick-than > div > div:nth-child(1) {
+	color: red;
+}
+#master-stick-than > div > div > i:nth-child(1) {
+	font-size: 160%;
+}
+#master-stick-than > div > div:nth-child(2) {
+	color: green;
+}
+#master-stick-than > div > div:nth-child(3) {
+	font-size: 65%;
+	fontFamily: "方正黑体简体";
+}
+/*-------------------------master-stick样式end--------------------------------------------------*/
+
+/*-------------------------loan-master-stick样式begin--------------------------------------------------*/
+#loan_master_stick {
+	background: #ffffff;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+#loan_master_stick > * {
+	padding: 6px;
+}
+#loan_master_stick > div:nth-child(n+2),#loan_master_stick_than > div > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#loan_master_stick_title {
+	font-size: 90%;
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+#loan_master_stick_number {
+	padding: 22.5px;
+}
+#loan_master_stick_number > div > i:nth-child(1) {
+	color: #04c5ff;
+	font-size: 180%;
+}
+#loan_master_stick_number > div > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#loan_master_stick_than {
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+}
+#loan_master_stick_than > div {
+	display: block;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+#loan_master_stick_than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+}
+#loan_master_stick_than > div > div:nth-child(1) {
+	color: red;
+}
+#loan_master_stick_than > div > div > i:nth-child(1) {
+	font-size: 160%;
+}
+#loan_master_stick_than > div > div:nth-child(2) {
+	color: green;
+}
+#loan_master_stick_than > div > div:nth-child(3) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+/*-------------------------loan-master-stick样式end--------------------------------------------------*/
+
+/*-------------------------chart-stick样式begin--------------------------------------------------*/
+#chart-stick {
+	background: #ffffff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	height: 100%;
+}
+#chart-stick > * {
+	padding: 5px;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 100%;
+	-ms-flex: 1 100%;
+	flex: 1 100%;
+}
+#chart-stick-title > div:nth-child(1) {
+	font-size: 90%;
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+#chart-stick-title > div:nth-child(2) {
+	min-width: 78px;
+}
+#chart-stick-title > div:nth-child(2) > i:nth-child(1) {
+	font-size: 120%;
+	font-weight: 500;
+}
+#chart-stick-title > div:nth-child(2) > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#chart-stick-than {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	min-width: 118px;
+}
+#chart-stick-than > * {
+	width: 110px;
+	position: absolute;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.8s linear;
+	-webkit-transition: opacity 0.8s linear;
+}
+#chart-stick-than > div > div:nth-child(1) > i:nth-child(1) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#chart-stick-than > div > div:nth-child(1) > i:nth-child(n+2):nth-child(-n+3) {
+	color: red;
+	font-weight: bold;
+}
+#chart-stick-than > div > div:nth-child(1) > i:nth-child(n+4):nth-child(-n+5) {
+	color: #008000;
+	font-weight: bold;
+}
+/*-------------------------chart-stick样式end--------------------------------------------------*/
+
+/*-------------------------customers样式begin--------------------------------------------------*/
+#customers {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+#customers > * {
+	padding: 5px;
+}
+#customers-number {
+
+}
+#customers-number > div > i:nth-child(1) {
+	font-size: 180%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#customers-number > div > i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#customers-number > div:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+/*-------------------------customers样式end--------------------------------------------------*/
+
+/*-------------------------overdue样式begin--------------------------------------------------*/
+#overdue {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#overdue > * {
+	padding: 4px;
+}
+#overdue_picture {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+#overdue-number > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#overdue-number > div {
+	height: 27px;
+}
+#overdue-number > div:nth-child(1) > i {
+	color: #6d6d6d;
+	fontSize: 14px;
+}
+#overdue-number > div:nth-child(1) > i:nth-child(1) {
+	font-size: 180%;
+}
+#overdue-number > div:nth-child(1) > i:nth-child(2) {
+	font-size: 65%;
+}
+#overdue-number > div:nth-child(2) > i:nth-child(1) {
+	font-size: 100%;
+}
+#overdue_than {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#overdue_than > div > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#overdue_than {
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+}
+#overdue_than > div {
+	display: block;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+#overdue_than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+}
+#overdue_than > div > div:nth-child(1) {
+	color: red;
+}
+#overdue_than > div > div > i:nth-child(1) {
+	font-size: 160%;
+}
+#overdue_than > div > div:nth-child(2) {
+	color: green;
+}
+#overdue_than > div > div:nth-child(3) {
+	font-size: 55%;
+	max-width:100%;
+}
+
+/*-------------------------overdue样式end--------------------------------------------------*/
+
+/*-------------------------investment样式begin--------------------------------------------------*/
+#investment {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+#investment > * {
+	padding: 2px 2px 2px 2px;
+}
+#investment_picture {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+#investment-number > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#investment-number > div {
+	height: 27px;
+}
+#investment-number > div:nth-child(1) > i {
+	fontFamily: "方正黑体简体";
+	fontSize: 14px;
+}
+#investment_than {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#investment_than > div > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#investment_than {
+	border-top: 1px solid #F5F5F5;
+	background-color: #FAFAFA;
+}
+#investment_than > div {
+	display: block;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+#investment_than > div:nth-child(1) {
+	border-right: 1px solid #F5F5F5;
+}
+#investment_than > div > div:nth-child(1) {
+	color: red;
+}
+.value{
+	color: #000000;
+	font-size: 100% !important;
+}
+#investment_than > div > div > i:nth-child(1) {
+	font-size: 160%;
+}
+#investment_than > div > div:nth-child(2) {
+	color: green;
+}
+#investment_than > div > div:nth-child(3) {
+	font-size: 65%;
+	fontFamily: "方正黑体简体";
+}
+
+/*-------------------------investment样式end--------------------------------------------------*/
+
+/*-------------------------number-stick-stick样式begin-----------------------------------------*/
+#numberStick-container {
+	background: #ffffff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	height: 100%;
+
+}
+#numberStick-container > * {
+	padding: 5px;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 100%;
+	-ms-flex: 1 100%;
+	flex: 1 100%;
+}
+#numberStickInfo-1  div:nth-child(1) {
+	min-width: 78px
+}
+#numberStickInfo-1 > div i:nth-child(1){
+	font-size: 120%;
+	font-weight: 500;
+}
+#numberStickInfo-1 > div i:nth-child(2) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#numberStickInfo-1 div:nth-child(2) {
+	padding-top: 10px;
+	font-size: 90%;
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+#numberStickInfo-2 > div {
+	min-width: 110px;
+}
+#numberStickInfo-2 > div i:nth-child(1) {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+/*-------------------------number-stick-stick样式end-------------------------------------------*/
+
+/*-------------------------同业分析季度-信用风险，流动性风险，资本率，净利润，中间业务背景图、样式  begin-------------------------------------------*/
+.capital-icon {
+	background-image: url(../img/zbcz.png);
+}
+.liquidity-icon {
+	background-image: url(../img/ldfx.png);
+}
+.credit-icon {
+	background-image: url(../img/xyfx.png);
+}
+.netProfit-icon {
+	background-image: url(../img/jlr.png);
+}
+.business-icon {
+	background-image: url(../img/zjyw.png);
+}
+/*-------------------------同业分析季度-信用风险，流动性风险，资本率背景图、样式  end-------------------------------------------*/
+#credit > div:nth-child(1){
+	height: 110px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+#credit > div:nth-child(1) > div:nth-child(1){
+	width: 80px;
+	height: 80px;
+	background-size: 100% 100%;
+}
+#credit > div:nth-child(2) > i{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center
+}
+/*-------------------------指令信用风险（crafts-liquidityGap），流动性风险，资本率样式begin-------------------------------------------*/
+.arrowUp-bg-color {
+	color:red;
+}
+.arrowDown-bg-color {
+	color:green;
+}
+/*-------------------------指令信用风险，流动性风险，资本率样式end-------------------------------------------*/
+/*-------------------------crafts-stick样式begin-------------------------------------------*/
+.crafts-stick {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background: #ffffff;
+}
+.crafts-stick > div:nth-child(1) {
+	height: 40px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-bottom: 1px solid #adccf5;
+	margin-left: 6px;
+	margin-right: 6px
+}
+.valueStyle{
+	font-size: 180%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+.cardValueStyle {
+	font-size: 220%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+.fontStyle {
+	font-size: 105%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+.unit {
+	margin-top: 4px;
+	font-size: 50%;
+
+}
+.crafts-stick > div:nth-child(2) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	height: 100px;
+}
+.crafts-stick > div:nth-child(2) > div:nth-child(1) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 50%;
+}
+.crafts-stick > div:nth-child(2) > div:nth-child(1) > i:nth-child(1) {
+	font-size: 180%;
+	color:#04c5ff
+}
+.crafts-stick > div:nth-child(2) > div:nth-child(1) > i:nth-child(1) > i {
+	font-size: 50%;
+	color:#000000;
+}
+.crafts-stick > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+	padding-top: 10px
+}
+.crafts-stick > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > i,
+.crafts-stick > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > i{
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+.crafts-stick > div:nth-child(2) > div:nth-child(2) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 50%;
+}
+.crafts-stick > div:nth-child(3) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	background: #FAFAFA;
+	height: 40px;
+}
+.crafts-stick > div:nth-child(3) div {
+	width: 50%;
+	-webkit-align-self:center ;
+	-ms-flex-item-align:center ;
+	align-self:center ;
+}
+.crafts-stick > div:nth-child(3) div i:nth-child(1) {
+	font-size: 150%
+}
+.crafts-stick > div:nth-child(3) div i:nth-child(4) {
+	font-size: 13px;
+
+}
+/*-------------------------------crafts-stick样式begin----------------------------------------*/
+
+/*-------------------------------2015/12/15新增样式begin----------------------------------------*/
+
+#asset_number > div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+#asset_number > div {
+	height: 27px;
+}
+#asset_number > div:nth-child(1) > i {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#asset_number > div:nth-child(1) > i:nth-child(1) {
+	font-size: 180%;
+}
+#asset_number > div:nth-child(1) > i:nth-child(2) {
+	font-size: 65%;
+}
+#asset_number > div:nth-child(2) > i:nth-child(1) {
+	font-size: 100%;
+}
+
+#home_chart_1 > div:nth-child(1) {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	background-color: #ffffff;
+}
+#home_chart_1 > div:nth-child(2) {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	background-color: #ffffff;
+}
+#home_chart_2 > div:nth-child(1) {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	background-color: #ffffff;
+}
+#home_chart_2 > div:nth-child(2) {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	background-color: #ffffff;
+}
+/*边框及边距#F5F5F5*/
+.margin-all {
+	margin: 2px;
+}
+.margin-top-2 {
+	margin-top: 2px;
+}
+.margin-top-4 {
+	margin-top: 4px;
+}
+.border-all {
+	border: 1px solid #F5F5F5;
+}
+.margin-all-border {
+	margin: 2px;
+	border: 1px solid #F5F5F5;
+}
+.margin-top-border {
+	margin-top: 4px;
+	border: 1px solid #F5F5F5;
+}
+.margin-right-border {
+	margin-right: 2px;
+	border: 1px solid #F5F5F5;
+}
+.margin-bottom-border {
+	margin-bottom: 4px;
+	border: 1px solid #F5F5F5;
+}
+.margin-left-border {
+	margin-left: 2px;
+	border: 1px solid #F5F5F5;
+}
+/*div背景色*/
+.div-bg-color {
+	background-color: #f9f9f9 !important;
+}
+/*div背景透明*/
+.div-bg-none {
+	background-color: transparent;
+	z-index: -999;
+}
+
+.button-margin {
+	color:#c1353a !important;
+}
+
+.contact {
+	/*background-image: url("../img/contact.png");*/
+	background-size: 100% 100%;
+	height: 12px;
+	width: 12px;
+}
+
+.icons{
+	font-size: 28px;
+	padding: 0 10px 0 2px;
+}
+
+input::-ms-input-placeholder{text-align: left;}
+input::-webkit-input-placeholder{text-align: left;}
+input::-webkit-input-placeholder{font-size: 12px;}
+input::-ms-input-placeholder{font-size: 12px;}
+
+.loginContainer {
+	position: absolute;
+	top:50px;
+	right: 2%;
+	left: 2%;
+}
+.loginContainer > * {
+	padding: 10px;
+}
+
+.loginTips {
+	color: red;
+	text-align: center;
+}
+
+.btn-cancel {
+	background-color: lightgray !important;
+}
+.loginImg {
+	background: url("../img/loginImg.png");
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+}
+.loginInput {
+	height: 45px;
+	margin-bottom: 14px !important;
+	background-color: #ffffff !important;
+	opacity:1;
+}
+.verifyCodeInput {
+	padding-left: 5px !important;
+	width: 135px !important;
+	padding-right: 0 !important;
+}
+.verifyCode {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	/*margin-right: 20px !important;*/
+}
+.verifyButton {
+	margin-top: 0px !important;
+	margin-left: 15px !important;
+	width: 65% !important;
+	background-color: #0a63c7 !important;
+	color: #ffffff !important;
+	font-size: medium !important;
+}
+.verifyCode > * {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.verifyCode > label:nth-child(1){
+
+}
+.verifyCode > label:nth-child(2){
+	-webkit-align-self:center;
+	-ms-flex-item-align:center;
+	align-self:center;
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+#codeImg {
+	height: 45px;
+}
+.loginForm {
+	margin-left: 8%;
+	margin-right: 8%;
+}
+.button-submit {
+	border-radius: 35px !important;
+	border-color:#c1353a !important;
+	background: 0 0;
+	color:#c1353a !important;
+}
+.loginCheckbox {
+	padding-bottom: 5px;
+}
+.button-help {
+	border-radius: 35px !important;
+	background-color: #4BB0DE !important;
+	color: #ffffff !important;
+}
+.button-contact {
+	border-radius: 35px !important;
+	background-color: #49B7BB !important;
+	color: #ffffff !important;
+}
+
+/*-------------------------------指令craftsDebitCard样式begin----------------------------------------*/
+#debitCard {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column
+}
+#debitCard > div:nth-child(1){
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	flex-direction: row;
+}
+.debitCard-width{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	width: 50%;
+	height: 120px;
+}
+.debitCard-title{
+	padding-left: 6px;
+	padding-top: 6px
+}
+.debitCard-value {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-self:center;
+	-ms-flex-item-align:center;
+	align-self:center;
+	height: 110px
+}
+
+.debitCard-valueSize{
+	font-size: 180%;
+	color: #04c5ff
+}
+.rank-width{
+	width: 50%;
+}
+.rank-height{
+	height: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.rank-ratio{
+	padding-left: 25px
+}
+.rank-ratio-value{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 50px
+}
+.rank-ratio-valueSize{
+	font-size: 180%;
+	color: #04c5ff
+}
+#debitCard > div:nth-child(2) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	background-color: #FAFAFA
+}
+#debitCard > div:nth-child(2) > div:nth-child(1){
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 50%;
+	height: 40px;
+	border-right: 1px solid #FAFAFA
+}
+#debitCard > div:nth-child(2) > div:nth-child(2){
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 50%;
+	height: 40px
+}
+/*-------------------------------指令craftsDebitCard样式end----------------------------------------*/
+
+#branchBankName-style {
+	font-size: 140%;
+	color: #003e76;
+	font-weight: 600;
+}
+/*-------------------------------指令branchBandProfit样式begin----------------------------------------*/
+.branchBankProfit-position {
+	position: absolute;
+	top: 0px;;
+	right:20px;
+}
+.branchBankProfit-position > *{
+	color: #003e76;
+}
+.branchBankProfit-position > div:nth-child(1) {
+	padding-top: 25px;
+	font-size: 110%;
+	font-weight: 600;
+}
+
+.branchBankProfit-position > div:nth-child(2) {
+	padding-top: 5px;
+	padding-left: 15px;
+}
+.branchBankProfit-position > div:nth-child(2)> i:nth-child(1) {
+	font-size: 150%;
+	font-weight: 600;
+}
+.branchBankProfit-position > div:nth-child(2)> i:nth-child(2) {
+	font-size: 50%;
+	font-weight: 600;
+}
+
+.branchBankProfit-position > div:nth-child(3) {
+	font-size: 70%;
+	font-weight: 600;
+}
+.branchBankProfit-bg {
+	height: 110px !important;
+	background-image: url(../img/branchBankProfit-bg.jpg) !important;
+	background-size: 100% 100%;
+}
+.branch-bank-profit {
+	height: 110px;
+}
+/*-------------------------------指令branchBandProfit样式end----------------------------------------*/
+
+
+
+/*-------------------------------2015/12/15新增样式end----------------------------------------*/
+
+.col-85{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 85%;
+	-moz-flex: 0 0 85%;
+	-ms-flex: 0 0 85%;
+	flex: 0 0 85%;
+	max-width: 85%;
+}
+.col-15{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 15%;
+	-moz-flex: 0 0 15%;
+	-ms-flex: 0 0 15%;
+	flex: 0 0 15%;
+	max-width: 15%;
+}
+.body {
+	-webkit-tap-highlight-color: transparent;
+}
+.icon-deposit{
+	color:#ffb400;
+	font-size:30px;
+}
+
+.icon-loan{
+	color:#de577b;
+	font-size:30px;
+}
+.net-profitTitle{
+	padding-top: 5px;
+	padding-left: 5px;
+	fontFamily:"方正黑体简体";
+	font-size: 14px;
+	color:#6d6d6d;
+	font-weight: bolder;
+}
+#netProfit {
+	width:100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#netProfit div{
+	width:95%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:row;
+	-ms-flex-direction:row;
+	flex-direction:row;
+}
+#netProfit div div{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-self:center;
+	-ms-flex-item-align:center;
+	align-self:center;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	-webkit-align-content:center;
+	-ms-flex-line-pack:center;
+	align-content:center;
+}
+.net-profit {
+	width: 30%;
+	background-color: #f9f9f9 !important;
+	height: 200px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+}
+.net-profitFont{
+	color: #ffffff;
+	font-size: 50px;
+}
+.card {
+	margin: 0 0 !important;
+}
+.esm-profit-after-provisionsCenter,.esm-profit-before-provisionCenter,.esm-net-profitCenter{
+	line-height: 70px !important;
+	text-align: center;
+	border-radius: 70px;
+	width: 70px !important;
+	height: 70px !important;
+}
+.esm-profit-after-provisionsCenter{
+	background-color: #90b7ea;
+}
+.esm-profit-before-provisionCenter{
+	background-color: #e9d140;
+}
+.esm-net-profitCenter{
+	background-color: #e6794e;
+}
+.esm-profit-after-provisionsArrow,.esm-profit-before-provisionArrow,.esm-net-profitArrow {
+	width: 0;
+	height: 30px;
+	margin-top: -2px;
+	border-width: 8px;
+	border-style: solid;
+}
+.esm-profit-after-provisionsArrow{
+	border-color: #90b7ea transparent transparent transparent;
+}
+.esm-profit-before-provisionArrow{
+	border-color: #e9d140 transparent transparent transparent;
+}
+.esm-net-profitArrow{
+	border-color: #e6794e transparent transparent transparent;
+}
+.ionicFont {
+	color: #ffffff;
+	font-size: 64px;
+}
+.fontCenter {
+	line-height: 80px !important;
+	text-align: center;
+	border-radius: 80px;
+	background-color: cornflowerblue;
+}
+.all-bg{
+	background: rgb(235, 240, 236);
+}
+.up-color {
+	color: red;
+}
+
+.down-color {
+	color: green;
+}
+
+.bg-color {
+	background-color: #FAFAFA;
+}
+
+.top-line {
+	border-top: 1px solid #F5F5F5;
+}
+
+.right-line {
+	border-right: 1px solid #F5F5F5;
+}
+
+
+
+.center {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.triangle-size {
+	font-size: 160%;
+}
+
+/*-------------netProfit样式begin---------------*/
+#netProfitContainer  div{
+
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+	color: #000000;
+}
+#float-stick {
+	position: relative;
+	margin-top: -33%;
+}
+/*-------------netProfit样式end---------------*/
+
+.default-bg1{
+	background:rgb(106, 195, 227)
+}
+.default-bg2{
+	background:rgb(96,179,211)
+}
+
+.current {
+	-webkit-transition-duration: 0.2s;
+	-webkit-transform: scale(1.03);
+	-moz-transition-duration: 0.2s;
+	-moz-transform: scale(1.03);
+	background: rgb(255,182,43);
+}
+.now {
+	background: rgb(255,182,43);
+}
+
+.icon1{
+	color: #ffffff;
+	font-size: 200%;
+}
+.icon2{
+	color: #ffffff;
+	font-size: 600%;
+}
+
+.padding{
+	padding: 3px;
+}
+.all-bg{
+	background: rgb(235, 240, 236);
+}
+.magnet-bg{
+	background: rgb(255,182,43);
+}
+.magnetChanged-bg{
+	background: rgb(255,161,39);
+}
+.triangle{
+	content: "";
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border: 10px solid transparent;
+	border-bottom-color:rgb(255,182,43);
+	position: relative;
+	bottom: 19px;
+	left:50%;
+	margin-left: -10px;
+}
+
+
+/*-------------*/
+.public-deposit-value {
+	font-size: 120%;
+	font-weight: 500;
+}
+
+.public-deposit-value-units {
+	font-size: 50%;
+}
+
+.ratio-style-up {
+	color: red;
+}
+
+.ratio-style-down {
+	color: #008000;
+}
+
+.height {
+	height: 72.5px;
+}
+
+.stick {
+	padding-top: 4px;
+}
+
+.master {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.master > * {
+	padding: 5px;
+}
+
+.stick-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.stick-wrapper > * {
+	padding: 5px;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 100%;
+	-ms-flex: 1 100%;
+	flex: 1 100%;
+}
+
+.border-right {
+	border: 1px solid #F5F5F5;
+	border-right: none;
+	width: 50%;
+}
+
+.border-left {
+	border: 1px solid #F5F5F5;
+	border-left: none;
+	width: 50%;
+}
+
+.echarts > * {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.echarts {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+.wrap {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.wrap > * {
+	width: 110px;
+	position: absolute;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.8s linear;
+	-webkit-transition: opacity 0.8s linear;
+}
+
+.active {
+	opacity: 1 !important;
+}
+
+.carousel {
+
+}
+.loginTitle {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	font-size: 150%;
+	color: #ffffff;
+	text-align: center;
+}
+/*------查询页-------*/
+.query-content-padding {
+	padding: 3px;
+}
+
+.query-content-padding div div, .query-content-padding div~div button  {
+	padding: 1%;
+}
+.query-params-button >div {
+	width: 95%;
+	padding-left: 5%;
+}
+
+.list >div {
+	padding: 1%;
+}
+
+.label {
+	display: table;
+	padding: 7px 10px 7px 0px;
+	width: 100%;
+	font-size: 16px;
+}
+
+ionic-datepicker > button:nth-child(1){
+	border: 1px solid rgba(255, 255, 255, 0.32);
+	border-radius: 15px;
+	line-height: 10px !important;
+	margin-top: 2.5px;
+	background: #c1353a;
+	color: #FFFFFF;
+	min-height: 28px;
+}
+
+.backHX {
+	border: 1px solid rgba(255, 255, 255, 0.32);
+	line-height: 10px !important;
+	padding: 3px !important;
+	margin-top: 2.5px;
+	background: #ffffff;
+	color: #369BEC;
+	min-height: 28px;
+	font-size: medium !important;
+	font-weight: bolder;
+}
+
+.threeGauge{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.threeGauge > * {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+/*------gain-secondStick(盈利分析中间的指标看板)--------------begin-------*/
+#gain-secondStick {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	height: 100%;
+	padding-top: 10px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#gain-secondStick > * {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+#gain-secondStick > div:nth-child(2) {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.gain-secondStic-padding {
+	padding-bottom: 5px;
+
+}
+/*------gain-secondStick(盈利分析中间的指标看板)--------------end---------*/
+.crafts-stick-wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.crafts-stick-wrapper > div:nth-child(1),.crafts-stick-wrapper > div:nth-child(2){
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+/*---------字体大小样式---------*/
+
+.font-title-1 {
+	font-size: 90%;
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+
+.font-title-2 {
+	font-size: 65%;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+
+/*-----------表格 ui-grid------------*/
+
+.loadTable {
+	display: none;
+}
+
+.loadFinished {
+	display: block;
+}
+
+.clear-table-style {
+	clear:both;
+}
+
+.loading-table:before {
+	content: "加载中...";
+	padding-left: 1%;
+}
+
+.deposit-table-height {
+	clear:both;
+}
+
+.table-height{
+	clear:both;
+}
+
+.table-network-anomaly:after {
+	content:"网络异常";
+	padding-left: 1%;
+}
+/*-----------数据加载的样式------------*/
+.loader:before{
+	content:"加载中...";
+	padding-left: 1%;
+}
+/*navBar的图片背景,设置一个固定的top像素高度，预留给状态栏*/
+.navBarImg {
+	background-image: url(../img/headlogo.png);
+	background-size: 100% 44px;
+}
+.devicesTitle {
+	text-align: center;
+}
+.bar-subHeader {
+	top: 44px;
+	height: 40px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+.query-subHeader {
+	top: 84px;
+	height: 40px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	background-color: #ffffff !important;
+}
+.bar-subHeader >h4{
+	width: 100%;
+}
+.bar-subHeader >button{
+	position: absolute;
+	left: 0;
+}
+.bar {
+	background-color: #F9F9F9;
+}
+.deviceFooter {
+	border-top: 1px solid #b2b2b2 !important;
+}
+
+.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
+	font-size: 25px;
+}
+.button.button-light {
+	border: 1px solid #DCCECE !important;
+	background-color: #FFFFFE !important;
+}
+.button-light:focus, .button-light:hover{
+	border: 1px solid #ac9f9f !important;
+	background-color: #7488c3 !important;
+}
+h4 {
+	margin-top: 0;
+}
+.checkState {
+	padding-top: 5px;
+	padding-left: 5px;
+	height: 30px;
+}
+.queryDeviceCheck {
+	display: inline !important;
+	border: 1px solid #ccc !important;
+	color: #000000;
+	width: 120px;
+	height: 25px !important;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	margin-bottom: 3px !important;
+}
+
+.welcome {
+	position: absolute !important;
+	top: 0px;
+	bottom: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: #FFFFFF;
+	z-index:12;
+}
+
+.welcome-slide {
+	height: 100%;
+	width: 100%;
+	background-size: 100% 100%;
+}
+
+.welcome-button {
+	position: absolute;
+	top: 1%;
+	right: 15px;
+	border-radius: 21px;
+	height: 40px;
+	opacity: 0.5;
+	background-color: #FFFFFF;
+	border-color: #3409DA;
+}
+
+.list:last-child {
+	padding-bottom: 45px;
+}
+
+/*login css*/
+.radius {
+	-webkit-border-radius: 25px !important;
+}
+
+.input-center {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.input-height {
+	height: 40px;
+}
+
+#selection-buttons {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	padding: 2px;
+}
+#selection-buttons > div {
+	width: 80%;
+	padding: 1px;
+}
+#selection-params  {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	padding: 2px;
+}
+#selection-params > div {
+	width: 80%;
+	padding: 2px;
+	z-index: 11 !important;
+}
+/*modify password*/
+#oldPassword-group,#password-group,#passwordagaingroup {
+	padding-left: 10px;
+	padding-top: 10px;
+}
+.modifyPassword-input {
+	border: 1px solid #ddd !important;
+	width: 98%;
+	border-radius: 15px;
+}
+.cancel-button {
+	background-color: #808080 !important;
+	color:#ffffff !important;
+	border-color: transparent;
+}
+.cancel-button.active, .cancel-button.activated {
+	border-color: transparent;
+	background-color: #3c8be6;
+}
+.sure-button {
+	background-color: #c1353a !important;
+	color:#ffffff !important;
+	border-color: transparent;
+}
+.sure-button.active, .sure-button.activated {
+	border-color: transparent;
+	background-color: #3c8be6 !important;
+}
+.loginList > label {
+	height: 35px;
+	border-radius: 30px;
+	margin-bottom: 5px
+}
+
+.loginList > label:nth-child(n+3) {
+	background: none;
+	border: 0;
+}
+
+.loginList > label:nth-child(3) > label {
+	margin-top: -18px;
+	color: white;
+}
+
+.loginList > label:last-child {
+	background: none;
+	border: 0;
+	margin-top: 0;
+	height: 55px;
+}
+
+.loginList > div {
+	width: 60%;
+	margin: auto;
+}
+
+.esmTitle {
+	font-size: 16px;
+	color: white;
+}
+
+.white {
+	color: white;
+}
+.password {
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-line-pack: center;
+	-webkit-align-content: center;
+	align-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-ms-flex-item-align: center;
+	-webkit-align-self: center;
+	align-self: center;
+}
+.password-font {
+	font-size: 130%;
+	font-weight: 500;
+	color: #000000;
+}
+
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1; /*初始状态 透明度为0*/
+	}
+	25% {
+		opacity: 0.75;
+	}
+	50% {
+		opacity: 0.5; /*中间状态 透明度为0*/
+	}
+	75% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 0; /*结尾状态 透明度为1*/
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1; /*初始状态 透明度为0*/
+	}
+	25% {
+		opacity: 0.75;
+	}
+	50% {
+		opacity: 0.5; /*中间状态 透明度为0*/
+	}
+	75% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 0; /*结尾状态 透明度为1*/
+	}
+}
+.animated {
+	-webkit-animation-name: fadeOut; /*动画名称*/
+	-webkit-animation-duration: 1.5s; /*动画持续时间*/
+	-webkit-animation-iteration-count: 1; /*动画次数*/
+	-webkit-animation-delay: 0s; /*延迟时间*/
+}
+.animatedIn {
+	-webkit-animation-name: fadeIn; /*动画名称*/
+	-webkit-animation-duration: 1s; /*动画持续时间*/
+	-webkit-animation-iteration-count: 1; /*动画次数*/
+	-webkit-animation-delay: 0s; /*延迟时间*/
+}
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0; /*初始状态 透明度为0*/
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5; /*中间状态 透明度为0*/
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1; /*结尾状态 透明度为1*/
+	}
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0; /*初始状态 透明度为0*/
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5; /*中间状态 透明度为0*/
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1; /*结尾状态 透明度为1*/
+	}
+}
+
+.echart-noData {
+	position: absolute;
+	padding-top: 2px;
+	padding-left: 4px;
+	top:0;
+}
+.tip {
+	color: #000000;
+	padding-left: 5px;
+}
+
+.oaLoad {
+	padding-top: 35%;
+}
+
+.oaLoad > div:nth-child(1){
+	padding-bottom: 15px;
+}
+
+.oaLoading {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.loading {
+	background: #000 url(../img/loading.gif) no-repeat 10px 50%;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+	padding-left: 50px !important;
+	padding-right: 10px !important;
+}
+
+.load{
+	width:140px;
+	height:56px;
+	line-height:56px;
+	color:#fff;
+	padding-left:40px;
+	font-size:15px;
+	background: #000 url(../img/loading.gif) no-repeat 10px 50%;
+	opacity: 0.7;
+	z-index:9999;
+	border-radius:20px;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+.crafts-credit-height {
+	height: 165px;
+}
+.managenment-credit-height {
+	height: 135px;
+}
+.gain-target-height {
+	height: 180px;
+}
+.help {
+	padding-top: 2px;
+	padding-left: 9px;
+	padding-right: 8px;
+}
+
+.help > p {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	margin: 0;
+}
+.help > p:nth-child(1) {
+	padding-top: 6px;
+}
+.textHeight {
+	height: 50px;
+}
+.help > div {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.help-font {
+	color: #004b90;
+	font-weight: 600;
+	font-size: 110%;
+}
+.help-list {
+	border-color: #ddd;
+	background-color: #fff;
+	position: relative;
+	z-index: 2;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	margin: -1px;
+	padding: 12px;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 16px;
+	border-radius: 6px;
+}
+.help-list > div {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 90%;
+	-webkit-flex: 0 0 90%;
+	flex: 0 0 90%;
+}
+.help-footer {
+	height: 1px;
+	border-top: 1px solid #F9F9F9;
+	padding: 3px !important;
+}
+.help:last-child {
+	padding-bottom: 40px;
+}
+.help-one {
+	background-image: url(../img/xiatan.png);
+	height:300px;
+	background-size: 100% 100%;
+}
+.help-two {
+	background-image: url(../img/liandong.png);
+	height:600px;
+	background-size: 100% 100%;
+}
+.help-three {
+	background-image: url(../img/chaxun.png);
+	height:300px;
+	background-size: 100% 100%;
+}
+.help-four {
+	background-image: url(../img/caidan.png);
+	height:300px;
+	background-size: 100% 100%;
+}
+.assessment-target-height {
+	height: 129px;
+}
+.CIB-ICON {
+	background-image: url("../img/CIB-IOCN.png");
+	background-size: 100% 100%;
+	height: 80px;
+}
+.BOB-ICON {
+	background-image: url("../img/BOB-ICON.png");
+	background-size: 100% 100%;
+	height: 80px;
+}
+.AM-ICON {
+	background-image: url("../img/AM-ICON.png");
+	background-size: 100% 100%;
+	height: 80px;
+}
+.M-BANK-ICON {
+	background-image: url("../img/M-BANK-ICON.png");
+	background-size: 100% 100%;
+	height: 80px;
+}
+.assessment-bg {
+	height: 125px;
+	width: 100%;
+	background-image: url(../img/assessment-bg.png);
+	background-size: 100% 100%;
+}
+.assessment-echart-height {
+	height: 217px;
+}
+.plate-bg {
+	height: 100px;
+	width: 100%;
+	background-image: url(../img/plate-bg.png);
+	background-size: 100% 100%;
+}
+.rank-1{
+	background-image: url('../img/rank/rank-1.png');
+}
+.rank-2{
+	background-image: url('../img/rank/rank-2.png');
+}
+.rank-3{
+	background-image: url('../img/rank/rank-3.png');
+}
+.rank-4{
+	background-image: url('../img/rank/rank-4.png');
+}
+.kpi-pic {
+	width: 80px;
+	height: 80px;
+	background-image: url(../img/self-deposit.png);
+	background-size: 100% 100%;
+}
+.kpi-echart-height {
+	height: 250px;
+}
+.selected {
+	border:1px solid #989090;
+}
+.not-selected {
+	border:0px;
+}
+
+@media (max-height: 519px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+		top: 5%;
+		left: 55px !important;
+		right: 55px !important;
+	}
+
+	.echart-noData {
+		position: absolute;
+		padding-top: 2px;
+		padding-left: 4px;
+		top:0;
+	}
+	.net-interestMargin-height {
+		height: 117px;
+	}
+	.business-bg {
+		height: 157px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 7px;
+		padding-bottom: 14px;
+	}
+	.gain-target-height {
+		height: 161px;
+	}
+	.business-height {
+		height: 157px;
+	}
+	.dedeposit-echart-height {
+		height: 222px;
+	}
+	.deposit-card-height {
+		/*height: 200px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 240px;
+	}
+	.echart-height {
+		height: 220px;
+	}
+	.net-profit {
+		height: 170px;
+	}
+	.payments-echart-height {
+		height: 250px;
+	}
+	.business-echart-height {
+		height:220px;
+	}
+	#master-stick-number {
+		padding-bottom: 14px;
+	}
+	#master-stick-number {
+		padding: 11.1px;
+	}
+	.risk-target-height {
+		height: 139px;
+	}
+	.risk-loan {
+		height: 165px;
+	}
+	.risk-dash {
+		height: 135px;
+	}
+	.debitCard-height {
+		height: 200px;
+	}
+	.debitCard-echartHeight {
+		height: 240px;
+	}
+	.unnormalload-echartOne-height {
+		height: 230px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 210px;
+	}
+	.bbfgl-echart-height {
+		height: 220px;
+	}
+	.bbfgl-echart-height {
+		height: 220px;
+	}
+	.crafts-bg {
+		height:90px;
+	}
+	#self-pic {
+		width: 60px;
+		height: 60px;
+	}
+	.crafts-echart-height {
+		height: 170px;
+	}
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 60px;
+		height: 60px;
+	}
+	#credit > div:nth-child(1) {
+		height: 80px;
+	}
+	.crafts-credit-height {
+		height: 135px;
+	}
+	.managenment-credit-height {
+		height: 135px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 13px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:2px;
+		text-align: center
+	;
+	}
+	.table-risks-bar-img{
+		padding-top:5px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:0.5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:0.5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		padding-top:0.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 85%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 85%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 160px;
+	}
+	.tab-home-main-gauge{
+		height: 127px;
+	}
+	.tab-home-main-gauge-two{
+		height: 114px;
+	}
+	.tab-home-main-bottom{
+		height: 48px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 19px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 14px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 10px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 574px;
+	}
+	.tab-gain-widows-height{
+		height: 455px;
+	}
+	.tab-risks-widows-height{
+		height: 455px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:877px;
+	}
+	.tab-gain-operatingin{
+		height: 468px;
+	}
+	.tab-gain-idcard{
+		height: 628px;
+	}
+	.tab-risks-page{
+		height: 628px;
+	}
+	.tab-risks-tablelist-img{
+		height:5%;
+		width:100%;
+		margin-top: 2.5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:24%;
+	}
+	.tab-risks-depositcard-windows{
+		height:455px;
+	}
+	.tab-gain-interestin-two{
+		height:591px;
+	}
+	.tab-home-three-height{
+		height: 875px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+}
+/*--iphone6s--*/
+@media (min-height: 520px) and (max-height: 560px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+		top: 5%;
+		left: 55px !important;
+		right: 55px !important;
+	}
+
+	.echart-noData {
+		position: absolute;
+		padding-top: 2px;
+		padding-left: 4px;
+		top:0;
+	}
+	.net-interestMargin-height {
+		height: 117px;
+	}
+	.business-bg {
+		height: 157px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 7px;
+		padding-bottom: 14px;
+	}
+	.gain-target-height {
+		height: 161px;
+	}
+	.business-height {
+		height: 157px;
+	}
+	.dedeposit-echart-height {
+		height: 222px;
+	}
+	.deposit-card-height {
+		/*height: 200px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 240px;
+	}
+	.echart-height {
+		height: 220px;
+	}
+	.net-profit {
+		height: 170px;
+	}
+	.payments-echart-height {
+		height: 250px;
+	}
+	.business-echart-height {
+		height:220px;
+	}
+	#master-stick-number {
+		padding-bottom: 14px;
+	}
+	#master-stick-number {
+		padding: 11.1px;
+	}
+	.risk-target-height {
+		height: 139px;
+	}
+	.risk-loan {
+		height: 165px;
+	}
+	.risk-dash {
+		height: 135px;
+	}
+	.debitCard-height {
+		height: 200px;
+	}
+	.debitCard-echartHeight {
+		height: 240px;
+	}
+	.unnormalload-echartOne-height {
+		height: 230px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 210px;
+	}
+	.bbfgl-echart-height {
+		height: 220px;
+	}
+	.bbfgl-echart-height {
+		height: 220px;
+	}
+	.crafts-bg {
+		height:90px;
+	}
+	#self-pic {
+		width: 60px;
+		height: 60px;
+	}
+	.crafts-echart-height {
+		height: 170px;
+	}
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 60px;
+		height: 60px;
+	}
+	#credit > div:nth-child(1) {
+		height: 80px;
+	}
+	.crafts-credit-height {
+		height: 135px;
+	}
+	.managenment-credit-height {
+		height: 135px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 16px;
+
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:2px;
+		text-align: center
+	;
+	}
+	.table-risks-bar-img{
+		padding-top:5px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:0.5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:0.5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:0.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 85%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 85%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 160px;
+	}
+	.tab-home-main-gauge{
+		height: 127px;
+	}
+	.tab-home-main-gauge-two{
+		height: 114px;
+	}
+	.tab-home-main-bottom{
+		height: 48px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 19px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 14px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 10px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 574px;
+	}
+	.tab-gain-widows-height{
+		height: 455px;
+	}
+	.tab-risks-widows-height{
+		height: 455px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:877px;
+	}
+	.tab-gain-operatingin{
+		height: 468px;
+	}
+	.tab-gain-idcard{
+		height: 628px;
+	}
+	.tab-risks-page{
+		height: 628px;
+	}
+	.tab-risks-tablelist-img{
+		height:5%;
+		width:100%;
+		margin-top: 2.5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:24%;
+	}
+	.tab-risks-depositcard-windows{
+		height:455px;
+	}
+	.tab-gain-interestin-two{
+		height:591px;
+	}
+	.tab-home-three-height{
+		height: 875px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+}
+/*----*/
+@media (min-height: 561px) and (max-height: 580px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.echart-noData {
+		position: absolute;
+		padding-top: 2px;
+		padding-left: 4px;
+		top:0;
+	}
+	.net-interestMargin-height {
+		height: 117px;
+	}
+	.business-bg {
+		height: 157px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 7px;
+		padding-bottom: 14px;
+	}
+	.gain-target-height {
+		height: 161px;
+	}
+	.business-height {
+		height: 157px;
+	}
+	.dedeposit-echart-height {
+		height: 222px;
+	}
+	.deposit-card-height {
+		/*height: 200px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 240px;
+	}
+	.echart-height {
+		height: 220px;
+	}
+	.net-profit {
+		height: 170px;
+	}
+	.payments-echart-height {
+		height: 250px;
+	}
+	.business-echart-height {
+		height:220px;
+	}
+	#master-stick-number {
+		padding-bottom: 14px;
+	}
+	#master-stick-number {
+		padding: 11.1px;
+	}
+	.risk-target-height {
+		height: 139px;
+	}
+	.risk-loan {
+		height: 165px;
+	}
+	.risk-dash {
+		height: 135px;
+	}
+	.debitCard-height {
+		height: 200px;
+	}
+	.debitCard-echartHeight {
+		height: 240px;
+	}
+	.unnormalload-echartOne-height {
+		height: 230px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 210px;
+	}
+	.bbfgl-echart-height {
+		height: 220px;
+	}
+	.bbfgl-echart-height {
+		height: 220px;
+	}
+	.crafts-bg {
+		height:90px;
+	}
+	#self-pic {
+		width: 60px;
+		height: 60px;
+	}
+	.crafts-echart-height {
+		height: 170px;
+	}
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 60px;
+		height: 60px;
+	}
+	#credit > div:nth-child(1) {
+		height: 80px;
+	}
+	.crafts-credit-height {
+		height: 135px;
+	}
+	.managenment-credit-height {
+		height: 135px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 13px;
+
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:2.5px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:5px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:2%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:2%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:0.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 85%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 85%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 161px;
+	}
+	.tab-home-main-gauge{
+		height: 136px;
+	}
+	.tab-home-main-gauge-two{
+		height: 122px;
+	}
+	.tab-home-main-bottom{
+		height: 52px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 21px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 15px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 11px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 576px;
+	}
+	.tab-gain-widows-height{
+		height: 468px;
+	}
+	.tab-risks-widows-height{
+		height: 468px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:877px;
+	}
+	.tab-gain-operatingin{
+		height: 468px;
+	}
+	/*.tab-gain-idcard{
+		height: 628px;
+	}*/
+	.tab-gain-idcard{
+		height: 600px;
+	}
+	.tab-risks-page{
+		height: 600px;
+	}
+	.tab-risks-tablelist-img{
+		height:5%;
+		width:100%;
+		padding-top:5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:22%;
+	}
+	.tab-risks-depositcard-windows{
+		height:468px;
+	}
+	.tab-gain-interestin-two{
+		height:580px;
+	}
+	.tab-home-three-height{
+		height: 914px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+}
+
+@media (min-height: 581px) and (max-height: 609px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.dedeposit-echart-height {
+		height: 250px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.deposit-institution-height {
+		height: 270px;
+	}
+	.gain-target-height {
+		height:160px;
+	}
+	#gain-secondStick {
+		padding-top: 25px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 44px;
+		padding-bottom: 14px;
+	}
+	.net-interestMargin-height {
+		height: 145px;
+	}
+	.business-height {
+		height: 190px;
+	}
+	.business-bg {
+		height: 190px;
+	}
+	.payments-echart-height {
+		height: 250px;
+	}
+	.margin-card {
+		height: 220px;
+	}
+	.margin-height {
+		height: 280px;
+	}
+	.risk-target-height {
+		height: 143px;
+	}
+	#master-stick-number {
+		margin-top: -18px;
+		padding-bottom: 10px;
+	}
+	#master-stick-number {
+		padding: 15px;
+	}
+	.unnormalload-echartOne-height {
+		height: 250px;
+	}
+	.business-echart-height {
+		height: 250px;
+	}
+	.crafts-bg {
+		height: 90px;
+		width: 100%;
+		background-image: url(../img/crafts-top.jpg);
+		background-size: 100% 100%;
+	}
+	#self-pic {
+		width: 60px;
+		height: 60px;
+	}
+	.crafts-stick-height {
+		height: 90px !important;
+	}
+	.crafts-echart-height {
+		height: 190px;
+	}
+
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 60px;
+		height: 60px;
+	}
+	#credit > div:nth-child(1) {
+		height: 80px;
+	}
+	.crafts-credit-height {
+		height: 135px;
+	}
+	.debitCard-echartHeight {
+		height: 285px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 5%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:10px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:10px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 175px;
+	}
+	.tab-home-main-gauge{
+		height: 148px;
+	}
+	.tab-home-main-gauge-two{
+		height: 139px;
+	}
+	.tab-home-main-bottom{
+		height: 50px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 23px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 16px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 617px;
+	}
+	.tab-home-three-height{
+		height: 875px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-gain-widows-height{
+		height: 493px;
+	}
+	.tab-risks-widows-height{
+		height: 493px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:967px;
+	}
+	.tab-gain-operatingin{
+		height: 590px;
+	}
+	.tab-gain-idcard{
+		height: 694px;
+	}
+	.tab-risks-page{
+		height: 694px;
+	}
+	.tab-risks-tablelist-img{
+		height:5%;
+		width:100%;
+		padding-top: 5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:26%;
+	}
+	.tab-risks-depositcard-windows{
+		height:493px;
+	}
+	.tab-gain-interestin-two{
+		height:626px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+}
+/*--android5.5寸屏幕--*/
+@media (min-height: 610px) and (max-height: 630px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 300px;
+	}
+	.echart-height {
+		height: 255px;
+	}
+	.dedeposit-echart-height {
+		height: 255px;
+	}
+	.deposit-institution-height {
+		height: 280px;
+	}
+	.gain-target-height {
+		height: 150px;
+	}
+	#gain-secondStick {
+		padding-top: 25px;
+	}
+	.margin-card {
+		height: 220px;
+	}
+	.margin-height {
+		height: 285px;
+	}
+	.payments-echart-height {
+		height: 255px;
+	}
+	.business-echart-height {
+		height: 255px;
+	}
+	.risk-target-height {
+		height: 159px;
+	}
+	.risk-loan {
+		height: 180px;
+	}
+	.risk-dash {
+		height: 171px;
+	}
+	.unnormalload-echartOne-height {
+		height: 260px;
+	}
+	.bbfgl-echart-height {
+		height: 255px;
+	}
+	#self-pic {
+		width: 60px;
+		height: 60px;
+	}
+	.crafts-stick-height {
+		height: 85px !important;
+	}
+	.crafts-echart-height {
+		height: 190px;
+	}
+
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 60px;
+		height: 60px;
+	}
+	#credit > div:nth-child(1) {
+		height: 80px;
+	}
+	.crafts-credit-height {
+		height: 130px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 2%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:15px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:15px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 175px;
+	}
+	.tab-home-main-gauge{
+		height: 148px;
+	}
+	.tab-home-main-gauge-two{
+		height: 139px;
+	}
+	.tab-home-main-bottom{
+		height: 50px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 23px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 16px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 617px;
+	}
+	.tab-home-three-height{
+		height: 955px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-gain-widows-height{
+		height: 528px;
+	}
+	.tab-risks-widows-height{
+		height: 528px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:973px;
+	}
+	.tab-gain-operatingin{
+		height:558px;
+	}
+	.tab-gain-idcard{
+		height: 708px;
+	}
+	.tab-risks-page{
+		height: 708px;
+	}
+	.tab-risks-tablelist-img{
+		height:5%;
+		width:100%;
+		padding-top: 5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:26%;
+	}
+	.tab-risks-depositcard-windows{
+		height:528px;
+	}
+	.tab-gain-interestin-two{
+		height:640px;
+	}
+}
+
+@media (min-height: 631px) and (max-height: 646px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 300px;
+	}
+	.echart-height {
+		height: 255px;
+	}
+	.dedeposit-echart-height {
+		height: 255px;
+	}
+	.deposit-institution-height {
+		height: 280px;
+	}
+	.gain-target-height {
+		height: 150px;
+	}
+	#gain-secondStick {
+		padding-top: 25px;
+	}
+	.margin-card {
+		height: 220px;
+	}
+	.margin-height {
+		height: 285px;
+	}
+	.payments-echart-height {
+		height: 255px;
+	}
+	.business-echart-height {
+		height: 255px;
+	}
+	.risk-target-height {
+		height: 159px;
+	}
+	.risk-loan {
+		height: 180px;
+	}
+	.risk-dash {
+		height: 171px;
+	}
+	.unnormalload-echartOne-height {
+		height: 260px;
+	}
+	.bbfgl-echart-height {
+		height: 255px;
+	}
+	#self-pic {
+		width: 60px;
+		height: 60px;
+	}
+	.crafts-stick-height {
+		height: 85px !important;
+	}
+	.crafts-echart-height {
+		height: 190px;
+	}
+
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 60px;
+		height: 60px;
+	}
+	#credit > div:nth-child(1) {
+		height: 80px;
+	}
+	.crafts-credit-height {
+		height: 130px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 2%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:15px;
+		text-align:center;
+	}
+	.table-risks-bar-img{
+		padding-top:15px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 179px;
+	}
+	.tab-home-main-gauge{
+		height: 152px;
+	}
+	.tab-home-main-gauge-two{
+		height: 142px;
+	}
+	.tab-home-main-bottom{
+		height: 51px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 23px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 16px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 630px;
+	}
+	.tab-home-three-height{
+		height: 973px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-gain-widows-height{
+		height: 540px;
+	}
+	.tab-risks-widows-height{
+		height: 540px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:973px;
+	}
+	.tab-gain-operatingin{
+		height:558px;
+	}
+	.tab-gain-idcard{
+		height: 630px;
+	}
+	.tab-risks-page{
+		height: 630px;
+	}
+	.tab-risks-tablelist-img{
+		height:10%;
+		width:100%;
+		padding-top: 5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:26%;
+	}
+	.tab-risks-depositcard-windows{
+		height:540px;
+	}
+	.tab-gain-interestin-two{
+		height:640px;
+	}
+}
+
+@media (min-height: 647px) and (max-height: 670px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.managenment-credit-height {
+		height: 165px;
+	}
+	.dedeposit-echart-height {
+		height: 300px;
+	}
+	.deposit-card-height {
+		/*height: 258px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 335px;
+	}
+	.echart-height {
+		height: 280px;
+	}
+	.echart-height {
+		height: 300px;
+	}
+	.net-profit {
+		height: 230px;
+	}
+	.gain-target-height {
+		height: 180px;
+	}
+	#gain-secondStick {
+		padding-top: 35px;
+	}
+	.net-interestMargin-height {
+		height: 180px;
+	}
+	.business-bg {
+		height: 225px;
+	}
+	.business-height {
+		height: 225px;
+	}
+	.payments-echart-height {
+		height: 300px;
+	}
+	.margin-card {
+		height: 250px;
+	}
+	.margin-height {
+		height: 350px;
+	}
+	.business-echart-height {
+		height: 300px;
+	}
+	.risk-loan {
+		height: 225px;
+	}
+	.risk-dash {
+		height: 211px;
+	}
+	.debitCard-echartHeight {
+		height: 370px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 280px;
+	}
+	.unnormalload-echartOne-height {
+		height: 320px;
+	}
+	.bbfgl-echart-height {
+		height: 300px;
+	}
+	.crafts-bg {
+		height: 130px;
+		width: 100%;
+		background-image: url(../img/crafts-top.jpg);
+		background-size: 100% 100%;
+	}
+	.crafts-echart-height {
+		height: 220px;
+	}
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 90px;
+		height: 90px;
+	}
+	.crafts-credit-height {
+		height: 185px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 370px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 5%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 188px;
+	}
+	.tab-home-main-gauge{
+		height: 159px;
+	}
+	.tab-home-main-gauge-two{
+		height: 143px;
+	}
+	.tab-home-main-bottom{
+		height: 61px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 24px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 17px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 556px;
+	}
+	.tab-home-three-height{
+		height: 1034px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-gain-widows-height{
+		height: 598px;
+	}
+	.tab-risks-widows-height{
+		height: 598px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:834px;
+	}
+	.tab-gain-operatingin{
+		height:615px;
+	}
+	.tab-gain-idcard{
+		height: 795px;
+	}
+	.tab-risks-page{
+		height: 800px;
+	}
+	.tab-risks-tablelist-img{
+		height:10%;
+		width:100%;
+		padding-top: 5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:26%;
+	}
+	.tab-risks-depositcard-windows{
+		height:598px;
+	}
+	.tab-gain-interestin-two{
+		height:556px;
+	}
+}
+
+@media (min-height: 671px) and (max-height: 699px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.managenment-credit-height {
+		height: 165px;
+	}
+	.dedeposit-echart-height {
+		height: 300px;
+	}
+	.deposit-card-height {
+		/*height: 258px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 335px;
+	}
+	.echart-height {
+		height: 280px;
+	}
+	.echart-height {
+		height: 300px;
+	}
+	.net-profit {
+		height: 230px;
+	}
+	.gain-target-height {
+		height: 180px;
+	}
+	#gain-secondStick {
+		padding-top: 35px;
+	}
+	.net-interestMargin-height {
+		height: 180px;
+	}
+	.business-bg {
+		height: 225px;
+	}
+	.business-height {
+		height: 225px;
+	}
+	.payments-echart-height {
+		height: 300px;
+	}
+	.margin-card {
+		height: 250px;
+	}
+	.margin-height {
+		height: 350px;
+	}
+	.business-echart-height {
+		height: 300px;
+	}
+	.risk-loan {
+		height: 225px;
+	}
+	.risk-dash {
+		height: 211px;
+	}
+	.debitCard-echartHeight {
+		height: 370px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 280px;
+	}
+	.unnormalload-echartOne-height {
+		height: 320px;
+	}
+	.bbfgl-echart-height {
+		height: 300px;
+	}
+	.crafts-bg {
+		height: 130px;
+		width: 100%;
+		background-image: url(../img/crafts-top.jpg);
+		background-size: 100% 100%;
+	}
+	.crafts-echart-height {
+		height: 220px;
+	}
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 90px;
+		height: 90px;
+	}
+	.crafts-credit-height {
+		height: 185px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 370px;
+	}
+	.div-gain-bar{
+		height:33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 2%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:20px;
+		text-align:center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 203px;
+	}
+	.tab-home-main-gauge{
+		height: 172px;
+	}
+	.tab-home-main-gauge-two{
+		height: 154px;
+	}
+	.tab-home-main-bottom{
+		height: 66px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 24px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 17px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 630px;
+	}
+	.tab-home-three-height{
+		height: 901px;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-gain-widows-height{
+		height: 585px;
+	}
+	.tab-risks-widows-height{
+		height: 585px;
+	}
+
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:1070px;
+	}
+	.tab-gain-operatingin{
+		height:600px;
+	}
+	.tab-gain-idcard{
+		height: 780px;
+	}
+	.tab-risks-page{
+		height: 765px;
+	}
+	.tab-risks-tablelist-img{
+		height:10%;
+		width:100%;
+		padding-top: 5%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:26%;
+	}
+	.tab-risks-depositcard-windows{
+		height:585px;
+	}
+	.tab-gain-interestin-two{
+		height:670px;
+	}
+}
+/*--iphone6sp--*/
+@media (min-height: 700px) and (max-height: 730px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.managenment-credit-height {
+		height: 165px;
+	}
+	.dedeposit-echart-height {
+		height: 300px;
+	}
+	.deposit-card-height {
+		/*height: 258px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 335px;
+	}
+	.echart-height {
+		height: 280px;
+	}
+	.echart-height {
+		height: 300px;
+	}
+	.net-profit {
+		height: 230px;
+	}
+	.gain-target-height {
+		height: 180px;
+	}
+	#gain-secondStick {
+		padding-top: 35px;
+	}
+	.net-interestMargin-height {
+		height: 180px;
+	}
+	.business-bg {
+		height: 225px;
+	}
+	.business-height {
+		height: 225px;
+	}
+	.payments-echart-height {
+		height: 300px;
+	}
+	.margin-card {
+		height: 250px;
+	}
+	.margin-height {
+		height: 350px;
+	}
+	.business-echart-height {
+		height: 300px;
+	}
+	.risk-loan {
+		height: 225px;
+	}
+	.risk-dash {
+		height: 211px;
+	}
+	.debitCard-echartHeight {
+		height: 370px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 280px;
+	}
+	.unnormalload-echartOne-height {
+		height: 320px;
+	}
+	.bbfgl-echart-height {
+		height: 300px;
+	}
+	.crafts-bg {
+		height: 130px;
+		width: 100%;
+		background-image: url(../img/crafts-top.jpg);
+		background-size: 100% 100%;
+	}
+	.crafts-echart-height {
+		height: 220px;
+	}
+	#credit > div:nth-child(1) > div:nth-child(1) {
+		width: 90px;
+		height: 90px;
+	}
+	.crafts-credit-height {
+		height: 185px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 370px;
+	}
+	.div-gain-bar{
+		height: 33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 5%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 210px;
+	}
+	.tab-home-main-gauge{
+		height: 178px;
+	}
+	.tab-home-main-gauge-two{
+		height: 159px;
+	}
+	.tab-home-main-bottom{
+		height: 68px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 24px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 17px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 615px;
+	}
+	.tab-home-three-height{
+		height: 923px;
+	}
+	.tab-gain-widows-height{
+		height: 660px;
+	}
+	.tab-risks-widows-height{
+		height: 660px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:1143px;
+	}
+	.tab-gain-operatingin{
+		height:638px;
+	}
+	.tab-gain-idcard{
+		height: 818px;
+	}
+	.tab-risks-page{
+		height: 798px;
+	}
+	.tab-risks-tablelist-img{
+		height:10%;
+		width:100%;
+		padding-top: 10%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:29%;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-risks-depositcard-windows{
+		height:660px;
+	}
+	.tab-gain-interestin-two{
+		height:720px;
+	}
+}
+/*--p8max--*/
+@media (min-height: 731px) and (max-height: 760px) {
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.dedeposit-echart-height {
+		height: 310px;
+	}
+	.deposit-card-height {
+		/*height: 258px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 350px;
+	}
+	.echart-height {
+		height: 300px;
+	}
+	.net-profit {
+		height: 230px;
+	}
+	.echart-height {
+		height: 310px;
+	}
+	#gain-secondStick {
+		padding-top: 35px;
+	}
+	.gain-target-height {
+		height: 190px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+	.net-interestMargin-height {
+		height: 175px;
+	}
+	.business-height {
+		height: 230px;
+	}
+	.business-bg {
+		height: 230px;
+	}
+	.payments-echart-height {
+		height: 310px;
+	}
+	.margin-card {
+		height: 270px;
+	}
+	.margin-height {
+		height: 330px;
+	}
+	.business-echart-height {
+		height: 310px;
+	}
+	.risk-loan {
+		height: 225px;
+	}
+	.risk-dash {
+		height: 231px;
+	}
+	.unnormalload-echartOne-height {
+		height: 310px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 300px;
+	}
+	.bbfgl-echart-height {
+		height: 310px;
+	}
+	.crafts-bg {
+		height: 140px;
+	}
+	.crafts-echart-height {
+		height: 230px;
+	}
+	.capital-height {
+		height: 140px;
+	}
+	.crafts-credit-height {
+		height: 175px;
+	}
+	.managenment-credit-height {
+		height: 175px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 380px;
+	}
+	.div-gain-bar{
+		height: 33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 5%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:40px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 210px;
+	}
+	.tab-home-main-gauge{
+		height: 178px;
+	}
+	.tab-home-main-gauge-two{
+		height: 159px;
+	}
+	.tab-home-main-bottom{
+		height: 68px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 24px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 17px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 615px;
+	}
+	.tab-home-three-height{
+		height: 923px;
+	}
+	.tab-gain-widows-height{
+		height: 680px;
+	}
+	.tab-risks-widows-height{
+		height: 680px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:1170px;
+	}
+	.tab-gain-operatingin{
+		height:638px;
+	}
+	.tab-gain-idcard{
+		height: 818px;
+	}
+	.tab-risks-page{
+		height: 818px;
+	}
+	.tab-risks-tablelist-img{
+		height:10%;
+		width:100%;
+		padding-top: 10%;
+	}
+	.tab-risks-tablelist-text{
+		z-indent:99;
+		width:100%;
+		padding-top:32%;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-risks-depositcard-windows{
+		height:680px;
+	}
+	.tab-gain-interestin-two{
+		height:763px;
+	}
+}
+
+
+/*--ipad横屏--*/
+@media (max-width: 1024px) and (min-width: 765px) and (orientation: landscape){
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.dedeposit-echart-height {
+		height: 310px;
+	}
+	.deposit-card-height {
+		/*height: 258px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 350px;
+	}
+	.echart-height {
+		height: 300px;
+	}
+	.net-profit {
+		height: 230px;
+	}
+	.echart-height {
+		height: 310px;
+	}
+	#gain-secondStick {
+		padding-top: 35px;
+	}
+	.gain-target-height {
+		height: 190px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+	.net-interestMargin-height {
+		height: 175px;
+	}
+	.business-height {
+		height: 230px;
+	}
+	.business-bg {
+		height: 230px;
+	}
+	.payments-echart-height {
+		height: 310px;
+	}
+	.margin-card {
+		height: 270px;
+	}
+	.margin-height {
+		height: 330px;
+	}
+	.business-echart-height {
+		height: 310px;
+	}
+	.risk-loan {
+		height: 225px;
+	}
+	.risk-dash {
+		height: 231px;
+	}
+	.unnormalload-echartOne-height {
+		height: 310px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 300px;
+	}
+	.bbfgl-echart-height {
+		height: 310px;
+	}
+	.crafts-bg {
+		height: 140px;
+	}
+	.crafts-echart-height {
+		height: 230px;
+	}
+	.capital-height {
+		height: 140px;
+	}
+	.crafts-credit-height {
+		height: 175px;
+	}
+	.managenment-credit-height {
+		height: 175px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 380px;
+	}
+	.div-gain-bar{
+		height: 33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 5%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:40px;
+		text-align:center;
+	}
+	.table-risks-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 210px;
+	}
+	.tab-home-main-gauge{
+		height: 178px;
+	}
+	.tab-home-main-gauge-two{
+		height: 159px;
+	}
+	.tab-home-main-bottom{
+		height: 68px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 24px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 17px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 615px;
+	}
+	.tab-home-three-height{
+		height: 923px;
+	}
+	.tab-gain-widows-height{
+		height: 680px;
+	}
+	.tab-risks-widows-height{
+		height: 680px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:1170px;
+	}
+	.tab-gain-operatingin{
+		height:638px;
+	}
+	.tab-gain-idcard{
+		height: 818px;
+	}
+	.tab-risks-page{
+		height: 818px;
+	}
+	.tab-risks-tablelist-img{
+		height:10%;
+		width:100%;
+		padding-top: 10%;
+	}
+	.tab-risks-tablelist-text{
+		width:100%;
+		padding-top:32%;
+	}
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+	.tab-risks-depositcard-windows{
+		height:680px;
+	}
+	.tab-gain-interestin-two{
+		height:763px;
+	}
+}
+/*--分辨率低于1920*1080的5.0寸屏幕大小--*/
+
+@media(min-height: 761px) {
+	.logo {
+		height: 100%;
+		width: 100%;
+		max-width: 105px;
+	}
+
+	.tabs-head-title{
+		height:10%;
+		padding-top: 1.7%;
+		font-size: 15px;
+		font-weight: bold;
+		margin-left: 5%;
+	}
+
+	.tabs-head-bottom-line{
+		border-bottom: 1px solid #f2f2f2;
+	}
+
+	.tabs-back-white{
+		background-color: #ffffff;
+	}
+
+	.tabs-back-whtgry{
+		background-color: #f2f2f2;
+	}
+
+	.tabs-back-grey{
+		background-color: #eeeeee;
+	}
+
+	.tab-gz-special{
+		height: 20px;
+		margin-left: 5%;
+		margin-right: 5%;
+		font-size: 10px;
+		font-family: 方正黑体简体;
+	}
+
+	.tab-home-three-chart-style{
+		width: 100%;
+		height: 33%;
+		background-color: #ffffff;
+	}
+
+	.tab-font-family{
+		font-family: 方正黑体简体;
+	}
+
+	.half-page{
+		width: 100%;
+		height: 49.5%;
+		margin-top:5px;
+		background-color: #ffffff;
+	}
+	.one-third-page{
+		width: 100%;
+		height: 33%;
+		margin-top:5px;
+		background-color: #ffffff;
+	}
+
+	.tab-home-margin-top{
+		margin-top: 5px;
+	}
+
+	.tab-home-x-half{
+		width: 49.5%;
+		height: 100%;
+	}
+
+	.tab-home-y-half{
+		height: 49.5%;
+		width: 100%;
+	}
+
+	.tab-home-x-left{
+		float:left ;
+	}
+
+	.tab-home-x-right{
+		float:right ;
+	}
+
+	.tab-home-cardnum-total-style{
+		font-size: 15px; height: 10%; background-color: #ffffff;
+	}
+
+	.tab-home-cardnum-style{
+		height: 44.5%; width: 100%; background-color: #ffffff;
+	}
+	.tab-home-cardnum-img-style{
+		width: 35%;
+	}
+	.tab-home-cardnum-text-style{
+		width: 65%; color:#00b0f0; padding-top: 5%;
+	}
+	.tab-home-text-center{
+		text-align: center;
+	}
+	.tab-img-text-css{
+		height: 40%; width: 100%;
+	}
+	.tab-home-chart{
+		width: 100%;
+		height:80%;
+	}
+	.tab-item-paddtop{
+		padding-top: 3%;
+	}
+	.tab-item-paddbottom{
+		padding-bottom: 3%;
+	}
+	.tab-main-color{
+		color:#b91c22;
+	}
+	.tab-font-size-10{
+		font-size: 10px;
+	}
+	.tab-font-size-16{
+		font-size: 16px;
+	}
+	.tab-font-size-13{
+		font-size: 13px;
+	}
+	.tab-font-size-18{
+		font-size: 18px;
+	}
+	.tab-font-size-20{
+		font-size: 20px;
+	}
+	.tab-style-height-full{
+		height: 100%;
+	}
+	.tab-style-width-full{
+		width: 100%;
+	}
+	.tab-style-height-8{
+		height: 80%;
+	}
+	.tab-style-height-6{
+		height: 60%;
+	}
+	.tab-netprft-img_style{
+		width: 65px; margin-top: 10%; margin-bottom: 5%;
+	}
+	.tab-netprft-text_style{
+		font-size: 13px; font-weight: normal; font-family: 方正黑体简体;
+	}
+	.tab-netprft-text-half{
+		width: 100%; height: 50%; background-color: #ffffff;
+	}
+	.tab-netprft-upmain-style{
+		width: 100%; height:30%;
+	}
+	.tab-netprft-downmain-style{
+		height: 70%; width: 100%; text-align: center;
+	}
+	.tab-font-large-size{
+		font-size: 16px ;
+	}
+	.tab-font-normal-size{
+		font-size: 13px ;
+	}
+	.tab-font-center{
+		text-align:center ;
+	}
+	.tab-font-left{
+		text-align: left;
+	}
+	.tab-gain-tablebuttom-padding{
+		padding-top:20px;
+		padding-left: 33%
+	}
+	.tab-gain-middle-space{
+		height: 10px;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.tab-risks-middle-space{
+		height: 10px;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.div-gain-left{
+		float:left;
+		height: 32%;
+		width: 49.5%;
+		margin-top:0.5%;
+		background-color:#ffffff;
+	}
+	.div-gain-right{
+		float:right;
+		height: 32%;
+		width: 49.5%;
+		margin-top:0.5%;
+		background-color:#ffffff;
+	}
+	.div-risks-left{
+		float:left;
+		height: 32%;
+		width: 49.5%;
+		margin-top:0.5%;
+		background-color:#ffffff;
+	}
+	.div-risks-right{
+		float:right;
+		height: 32%;
+		width: 49.5%;
+		margin-top:0.5%;
+		background-color:#ffffff;
+	}
+
+	.tab-home-asset-text-styl{
+		background-size: 100% 100%;
+		background-repeat:no-repeat;
+		background-image: url("/www/img/main_top.png");
+	}
+
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+
+	.title.title-center.header-item {
+		color: #000000;
+		font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+		/*font-weight: 500;*/
+	}
+	.dedeposit-echart-height {
+		height: 310px;
+	}
+	.deposit-card-height {
+		/*height: 258px;*/
+		background-color: #f9f9f9;
+	}
+	.deposit-institution-height {
+		height: 350px;
+	}
+	.echart-height {
+		height: 300px;
+	}
+	.net-profit {
+		height: 230px;
+	}
+	.echart-height {
+		height: 310px;
+	}
+	#gain-secondStick {
+		padding-top: 35px;
+	}
+	.gain-target-height {
+		height: 190px;
+	}
+	#gain-stick-number {
+		margin-top: 0px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+	.net-interestMargin-height {
+		height: 175px;
+	}
+	.business-height {
+		height: 230px;
+	}
+	.business-bg {
+		height: 230px;
+	}
+	.payments-echart-height {
+		height: 310px;
+	}
+	.margin-card {
+		height: 270px;
+	}
+	.margin-height {
+		height: 330px;
+	}
+	.business-echart-height {
+		height: 310px;
+	}
+	.risk-loan {
+		height: 225px;
+	}
+	.risk-dash {
+		height: 231px;
+	}
+	.unnormalload-echartOne-height {
+		height: 310px;
+	}
+	.unnormalload-echartTwo-height {
+		height: 300px;
+	}
+	.bbfgl-echart-height {
+		height: 310px;
+	}
+	.crafts-bg {
+		height: 140px;
+	}
+	.crafts-echart-height {
+		height: 230px;
+	}
+	.capital-height {
+		height: 140px;
+	}
+	.crafts-credit-height {
+		height: 175px;
+	}
+	.managenment-credit-height {
+		height: 175px;
+	}
+	.debitCard-height {
+		height: 210px;
+	}
+	.debitCard-echartHeight {
+		height: 380px;
+	}
+	.div-gain-bar{
+		height: 33%;
+	}
+	.font-normal{
+		font-size: 16px;
+	}
+	.font-small{
+		font-size: 13px;
+	}
+	.font-gain-type{
+		padding-top: 5%;
+		text-align: center;
+	}
+	.table-gain-bar-left{
+		float:left;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar-right{
+		float:right;
+		height: 35%;
+		width: 49.75%;
+	}
+	.table-gain-bar{
+		height: 75%;
+		width: 99.5%;
+		background-color:#ffffff
+	}
+	.table-gain-bar-small{
+		height: 25%;
+		width: 100%
+	}
+	.table-gain-bar-img{
+		padding-top:40px;
+		text-align: center;
+	}
+	.table-risks-bar-img{
+		padding-top:20px;
+		text-align: center;
+	}
+	.table-gain-bar-title-left{
+		float:left;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.table-gain-bar-title-right{
+		float:right;
+		width: 49%;
+		height: 100%;
+		text-align:center;
+		padding-top:5%;
+		margin-right:1%;
+		background-color:#F5F5F5;
+	}
+	.title{
+		padding: 4px;
+	}
+	.table-title-tips{
+		float:left;
+		width:32%;
+		height:100%;
+		margin-top: 0.5%;
+		padding-top:2.5%;
+		margin-right:1.3%;
+		background-color: #F5F5F5;
+	}
+	.table-title-top-left{
+		float:left;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-top-right{
+		float:right;
+		height: 75%;
+		width: 49.5%;
+		background-color:#ffffff
+	}
+	.table-title-buttom{
+		height: 25%;
+		text-align: center;
+		background-color: #eeeeee;
+	}
+	.tab-home-top-height{
+		height: 230px;
+	}
+	.tab-home-main-gauge{
+		height: 188px;
+	}
+	.tab-home-main-gauge-two{
+		height: 169px;
+	}
+	.tab-home-main-bottom{
+		height: 68px;
+	}
+	.tab-home-main-top-font1{
+		font-size: 24px; font-weight: bolder; color: #b91c22;
+	}
+	.tab-home-main-top-font2{
+		font-size: 17px; font-weight: bold; color: #b91c22;
+	}
+	.tab-home-main-top-font3{
+		font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+	}
+	.tab-home-two-height{
+		height: 615px;
+	}
+	.tab-home-three-height{
+		height: 923px;
+	}
+	.tab-gain-widows-height{
+		height: 680px;
+	}
+	.tab-risks-widows-height{
+		height: 680px;
+	}
+	.tab-gain-table-bar-type{
+		height: 100%;
+		width: 100%;
+		float: left;
+	}
+	.tab-gain-three{
+		height:1170px;
+	}
+	.tab-gain-operatingin{
+		height:638px;
+	}
+	.tab-gain-idcard{
+		height: 818px;
+	}
+	.tab-risks-page{
+		height: 818px;
+	}
+	.tab-risks-tablelist-img{
+		height:20%;
+		width:100%;
+		padding-top: 10%;
+	}
+	.tab-risks-tablelist-text{
+		width: 100%;
+		padding-top: 6%;
+	}
+
+	.tab-risks-depositcard-windows{
+		height:680px;
+	}
+	.tab-gain-interestin-two{
+		height:763px;
+	}
+}
+
+.logo {
+	height: 100%;
+	width: 100%;
+	max-width: 105px;
+}
+
+.tabs-head-title{
+	height:10%;
+	padding-top: 1.7%;
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 5%;
+}
+
+.tabs-head-bottom-line{
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.tabs-back-white{
+	background-color: #ffffff;
+}
+
+.tabs-back-whtgry{
+	background-color: #f2f2f2;
+}
+
+.tabs-back-grey{
+	background-color: #eeeeee;
+}
+
+.tab-gz-special{
+	height: 20px;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 10px;
+	font-family: 方正黑体简体;
+}
+
+.tab-home-three-chart-style{
+	width: 100%;
+	height: 33%;
+	background-color: #ffffff;
+}
+
+.tab-font-family{
+	font-family: 方正黑体简体;
+}
+
+.half-page{
+	width: 100%;
+	height: 49.5%;
+	margin-top:5px;
+	background-color: #ffffff;
+}
+.one-third-page{
+	width: 100%;
+	height: 33%;
+	margin-top:5px;
+	background-color: #ffffff;
+}
+
+.tab-home-margin-top{
+	margin-top: 5px;
+}
+
+.tab-home-x-half{
+	width: 49.5%;
+	height: 100%;
+}
+
+.tab-home-y-half{
+	height: 49.5%;
+	width: 100%;
+}
+
+.tab-home-x-left{
+	float:left ;
+}
+
+.tab-home-x-right{
+	float:right ;
+}
+
+.tab-home-cardnum-total-style{
+	font-size: 15px; height: 10%; background-color: #ffffff;
+}
+
+.tab-home-cardnum-style{
+	height: 44.5%; width: 100%; background-color: #ffffff;
+}
+.tab-home-cardnum-img-style{
+	width: 35%;
+}
+.tab-home-cardnum-text-style{
+	width: 65%; color:#00b0f0; padding-top: 5%;
+}
+.tab-home-text-center{
+	text-align: center;
+}
+.tab-img-text-css{
+	height: 40%; width: 100%;
+}
+.tab-home-chart{
+	width: 100%;
+	height:80%;
+}
+.tab-item-paddtop{
+	padding-top: 3%;
+}
+.tab-item-paddbottom{
+	padding-bottom: 3%;
+}
+.tab-main-color{
+	color:#b91c22;
+}
+.tab-font-size-10{
+	font-size: 10px;
+}
+.tab-font-size-16{
+	font-size: 16px;
+}
+.tab-font-size-13{
+	font-size: 13px;
+}
+.tab-font-size-18{
+	font-size: 18px;
+}
+.tab-font-size-20{
+	font-size: 20px;
+}
+.tab-style-height-full{
+	height: 100%;
+}
+.tab-style-width-full{
+	width: 100%;
+}
+.tab-style-height-8{
+	height: 80%;
+}
+.tab-style-height-6{
+	height: 60%;
+}
+.tab-netprft-img_style{
+	width: 65px; margin-top: 10%; margin-bottom: 5%;
+}
+.tab-netprft-text_style{
+	font-size: 13px; font-weight: normal; font-family: 方正黑体简体;
+}
+.tab-netprft-text-half{
+	width: 100%; height: 50%; background-color: #ffffff;
+}
+.tab-netprft-upmain-style{
+	width: 100%; height:30%;
+}
+.tab-netprft-downmain-style{
+	height: 70%; width: 100%; text-align: center;
+}
+.tab-font-large-size{
+	font-size: 16px ;
+}
+.tab-font-normal-size{
+	font-size: 13px ;
+}
+.tab-font-center{
+	text-align:center ;
+}
+.tab-font-left{
+	text-align: left;
+}
+.tab-gain-tablebuttom-padding{
+	padding-top:20px;
+	padding-left: 33%
+}
+.tab-gain-middle-space{
+	height: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.tab-risks-middle-space{
+	height: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.div-gain-left{
+	float:left;
+	height: 32%;
+	width: 49.5%;
+	margin-top:0.5%;
+	background-color:#ffffff;
+}
+.div-gain-right{
+	float:right;
+	height: 32%;
+	width: 49.5%;
+	margin-top:0.5%;
+	background-color:#ffffff;
+}
+.div-risks-left{
+	float:left;
+	height: 32%;
+	width: 49.5%;
+	margin-top:0.5%;
+	background-color:#ffffff;
+}
+.div-risks-right{
+	float:right;
+	height: 32%;
+	width: 49.5%;
+	margin-top:0.5%;
+	background-color:#ffffff;
+}
+
+.tab-home-asset-text-styl{
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-image: url("../img/main_top.png");
+}
+
+.table-gain-bar{
+	height: 75%;
+	width: 99.5%;
+	background-color:#ffffff
+}
+
+.title.title-center.header-item {
+	color: #000000;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '方正黑体简体', Arial, sans-serif;
+	/*font-weight: 500;*/
+}
+.dedeposit-echart-height {
+	height: 310px;
+}
+.deposit-card-height {
+	/*height: 258px;*/
+	background-color: #f9f9f9;
+}
+.deposit-institution-height {
+	height: 350px;
+}
+.echart-height {
+	height: 300px;
+}
+.net-profit {
+	height: 230px;
+}
+.echart-height {
+	height: 310px;
+}
+#gain-secondStick {
+	padding-top: 35px;
+}
+.gain-target-height {
+	height: 190px;
+}
+#gain-stick-number {
+	margin-top: 0px;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+.net-interestMargin-height {
+	height: 175px;
+}
+.business-height {
+	height: 230px;
+}
+.business-bg {
+	height: 230px;
+}
+.payments-echart-height {
+	height: 310px;
+}
+.margin-card {
+	height: 270px;
+}
+.margin-height {
+	height: 330px;
+}
+.business-echart-height {
+	height: 310px;
+}
+.risk-loan {
+	height: 225px;
+}
+.risk-dash {
+	height: 231px;
+}
+.unnormalload-echartOne-height {
+	height: 310px;
+}
+.unnormalload-echartTwo-height {
+	height: 300px;
+}
+.bbfgl-echart-height {
+	height: 310px;
+}
+.crafts-bg {
+	height: 140px;
+}
+.crafts-echart-height {
+	height: 230px;
+}
+.capital-height {
+	height: 140px;
+}
+.crafts-credit-height {
+	height: 175px;
+}
+.managenment-credit-height {
+	height: 175px;
+}
+.debitCard-height {
+	height: 210px;
+}
+.debitCard-echartHeight {
+	height: 380px;
+}
+.div-gain-bar{
+	height: 33%;
+}
+/*.font-normal{
+	font-size: 16px;
+}*/
+.font-small{
+	font-size: 13px;
+}
+.font-gain-type{
+	padding-top: 0%;
+	text-align: center;
+}
+.table-gain-bar-left{
+	float:left;
+	height: 35%;
+	width: 49.75%;
+}
+.table-gain-bar-right{
+	float:right;
+	height: 35%;
+	width: 49.75%;
+}
+.table-gain-bar{
+	height: 75%;
+	width: 99.5%;
+	background-color:#ffffff
+}
+.table-gain-bar-small{
+	height: 25%;
+	width: 100%
+}
+.table-gain-bar-img{
+	padding-top:5%;
+	text-align: center;
+}
+/*.table-risks-bar-img{
+	padding-top:20px;
+	text-align: center;
+}*/
+.table-gain-bar-title-left{
+	float:left;
+	width: 49%;
+	height: 100%;
+	text-align:center;
+	padding-top:3%;
+	margin-right:1%;
+	background-color:#F5F5F5;
+}
+.table-gain-bar-title-right{
+	float:right;
+	width: 49%;
+	height: 100%;
+	text-align:center;
+	padding-top:3%;
+	margin-right:1%;
+	background-color:#F5F5F5;
+}
+.title{
+	padding: 4px;
+}
+/*.table-title-tips{
+	float:left;
+	width:32%;
+	height:100%;
+	margin-top: 0.5%;
+	padding-top:2.5%;
+	margin-right:1.3%;
+	background-color: #F5F5F5;
+}*/
+.table-title-top-left{
+	float:left;
+	height: 75%;
+	width: 49.5%;
+	background-color:#ffffff
+}
+.table-title-top-right{
+	float:right;
+	height: 75%;
+	width: 49.5%;
+	background-color:#ffffff
+}
+.table-title-buttom{
+	height: 25%;
+	text-align: center;
+	background-color: #eeeeee;
+}
+/*.tab-home-top-height{
+	 height: 210px;
+ }
+.tab-home-main-gauge{
+	height: 178px;
+}
+.tab-home-main-gauge-two{
+	height: 159px;
+}*/
+.tab-home-main-bottom{
+	height: 68px;
+}
+.tab-home-main-top-font1{
+	font-size: 24px; font-weight: bolder; color: #b91c22;
+}
+.tab-home-main-top-font2{
+	font-size: 17px; font-weight: bold; color: #b91c22;
+}
+.tab-home-main-top-font3{
+	font-size: 12px; color: #b91c22; font-weight: normal; text-decoration: none;
+}
+.tab-home-two-height{
+	height: 615px;
+}
+.tab-home-three-height{
+	height: 923px;
+}
+/*.tab-gain-widows-height{
+	height: 680px;
+}
+.tab-risks-widows-height{
+	height: 680px;
+}*/
+.tab-gain-table-bar-type{
+	height: 100%;
+	width: 100%;
+	float: left;
+}
+/*.tab-gain-three{
+	height:1170px;
+}*/
+.tab-gain-operatingin{
+	height:638px;
+}
+/*.tab-gain-idcard{
+	height: 818px;
+}
+.tab-risks-page{
+	height: 818px;
+}*/
+/*.tab-risks-tablelist-img{
+	height:20%;
+	width:100%;
+	padding-top: 10%;
+}*/
+.tab-risks-tablelist-text{
+	width: 100%;
+	padding-top: 6%;
+}
+
+/*.tab-risks-depositcard-windows{
+	height:680px;
+}
+.tab-gain-interestin-two{
+	height:763px;
+}*/
+
+.mdHandlePwd{
+	margin: 0px 0px 0px 0px;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}

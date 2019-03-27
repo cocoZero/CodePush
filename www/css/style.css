@@ -1,0 +1,24 @@
+/* Empty. Add your own CSS if you like */
+.loginTitle {
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+	font-size: 150%;
+	color: #ffffff;
+	text-align: center;
+}
+.blue {
+    background-color: blue;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .pink {
+    background-color: pink;
+  }
+  .box{ 
+    height:100%; 
+  } 
+  .box h1{
+    position:relative; top:50%; transform:translateY(-50%); 
+  }
